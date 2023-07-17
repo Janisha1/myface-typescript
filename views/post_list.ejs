@@ -22,14 +22,7 @@
                 <p>
                     👍Likes : <%= post.likedBy.length %>     👎Dislikes: <%= post.dislikedBy.length %>
                 </p>
-                <!-- <ol>
-                    
-                    Liked by: <% post.likedBy.forEach(function(like) {%> 
-                        <li>
-                            <%= like.username %>
-                        </li>    
-                    <% }); %>
-                </ol> -->
+                <form method="post" action="/posts/<%= post.id %>/like/" > <button type="submit">Like</button> </form>
             </p>
         </li>
     <% }); %>
