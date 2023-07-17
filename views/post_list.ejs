@@ -20,9 +20,9 @@
                     Posted by: <%= post.postedBy.username %>
                             on - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
                 <p>
-                    👍Likes : <%= post.likedBy.length %>     👎Dislikes: <%= post.dislikedBy.length %>
                 </p>
-                <form method="post" action="/posts/<%= post.id %>/like/" > <button type="submit">Like</button> </form>
+                <form method="post" action="/posts/<%= post.id %>/like/" > <button type="submit">👍Likes : <%= post.likedBy.length %></button> </form>
+                <form method="post" action="/posts/<%= post.id %>/dislike/" > <button type="submit">👎Dislikes: <%= post.dislikedBy.length %></button> </form>
             </p>
         </li>
     <% }); %>
