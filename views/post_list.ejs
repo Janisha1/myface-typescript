@@ -1,32 +1,41 @@
 <html lang="en-gb">
 <%- include('_head') -%>
-<%- include('_header') -%>
-<body>
-<h1>Posts</h1>
-    <nav>   
-        <%if (postList.next) { %>
-            <a href="<%= postList.next %>">Next</a>
-        <% } %>
-        <%if (postList.previous) { %>
-            <a href="<%= postList.previous %>">Previous</a>
-        <% } %>
-    </nav>
-<ol>
-    <% postList.results.forEach(function(post) {%>
-        <li>
-            <h2> <%= post.message %> </h2>
-            <p>
-                <img src="<%= post.imageUrl %>" width="150" alt="Image not loading">
-                    Posted by: <%= post.postedBy.username %>
-                            on - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
-                <p>
-                </p>
-                <form method="post" action="/posts/<%= post.id %>/like/" > <button type="submit">👍Likes : <%= post.likedBy.length %></button> </form>
-                <form method="post" action="/posts/<%= post.id %>/dislike/" > <button type="submit">👎Dislikes: <%= post.dislikedBy.length %></button> </form>
-            </p>
-        </li>
-    <% }); %>
-</ol>
-</body>
-<%- include('_footer') -%>
+    <%- include('_header') -%>
+        <main>
+            <h1>Posts</h1>
+            <nav>
+                <%if (postList.next) { %>
+                    <a href="<%= postList.next %>">Next</a>
+                    <% } %>
+                        <%if (postList.previous) { %>
+                            <a href="<%= postList.previous %>">Previous</a>
+                            <% } %>
+            </nav>
+            <ol class="post-list">
+                <% postList.results.forEach(function(post) {%>
+                    <li class="post">
+                       
+                        <img src="<%= post.imageUrl %>" width="150" alt="User Image not loading" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png'">
+
+                       <div class="post-details">
+                        <h2>
+                            <%= post.message %>
+                        </h2>
+                        <p>Posted by: <%= post.postedBy.username %>
+                                on - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss" ) %>
+                        </p>
+                        <div class="interraction-wrapper">
+                            <form method="post" action="/posts/<%= post.id %>/like/"> <button type="submit">👍
+                                    <%= post.likedBy.length %></button></form>
+                            <form method="post" action="/posts/<%= post.id %>/dislike/"> <button
+                                    type="submit">👎<%= post.dislikedBy.length %></button></form>
+                        </div>
+                       </div>
+                        
+                    </li>
+                    <% }); %>
+            </ol>
+        </main>
+        <%- include('_footer') -%>
+
 </html>
