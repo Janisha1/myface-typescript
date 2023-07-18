@@ -23,7 +23,7 @@
 
 }
 
-.post-list{
+.post-list, .user-list{
     display: flex;
     flex-direction: column;
     gap:20px;
@@ -31,9 +31,13 @@
     margin-bottom:20px;
 }
 
-.post{
+.post, .user{
     display:flex;
     background-color: #c5b2f7;
+}
+
+.user{
+    background-color: #de902a;
 }
 
 .post-details{
@@ -45,12 +49,12 @@
 }
 
 @media only screen and (min-width: 850px) {
-    .post-list{
+    .post-list, .user-list{
         flex-direction: row;
         flex-wrap: wrap;
     }
 
-    .post{
+    .post, .user{
         max-width: 425px;
         flex-grow: 1;
     }

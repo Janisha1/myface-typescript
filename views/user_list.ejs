@@ -3,13 +3,6 @@
 <%- include('_header') -%>
 <body>
 <h1>Users</h1>
-<ol>
-    <% results.forEach(function(user) {%>
-        <li>
-            <%= user.name %>
-        </li>
-    <% }); %>
-</ol>
 <%if (next) { %>
     <a href="<%= next %>">Next</a>
 <% } %>
@@ -18,4 +11,20 @@
 <% } %>
 </body>
 <%- include('_footer') -%>
+<ol class="user-list">
+    <% results.forEach(function(user) {%>
+        <li class="user">
+            <img src="<%= user.profileImageUrl %>" width="150" alt="User Image not loading" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png'">
+            <div>
+                <h2>
+                    <%= user.name %>
+                </h2>   
+                <p>
+                    <%= user.username %>
+                </p>
+            </div>
+        </li>
+    <% }); %>
+</ol>
+
 </html>
