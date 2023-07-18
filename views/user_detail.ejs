@@ -1,8 +1,26 @@
 <html lang="en-gb">
 <%- include('_head') -%>
 <%- include('_header') -%>
-<body>
-<h1><%= name %></h1>
-</body>
+<main>
+    <div class="user-header">
+        <div class="user-cover_image"></div>
+        <img src=<%= profileImageUrl %>"" alt="" class="user-profile_img">
+        <h1><%= name %></h1>
+        <p class="user-user-name"><%= username %></p>
+        <p class="user-user-email"><%= email %></p>
+    </div>
+    <div class="user-post_list">
+        <h1 class="post-title"><%= name %>'s Posts</h1>
+        <% posts.forEach(post => {%>
+            <div class="user-post">
+                <div class="user-post_image"></div>
+                <p><%= username %></p>
+                <p><%= format(post.createdAt, "dd/MM/yyyy") %></p>
+
+            </div>
+        <% }); %>
+        
+    </div>
+</main>
 <%- include('_footer') -%>
 </html>

@@ -1,6 +1,31 @@
+:root {
+    --background-colour: #252a38;
+    --darker-background-colour: #151820;
+    --foreground-colour: #dcdcdc;
+    --primary-colour: #2985ff;
+    --secondary-colour: #252a3885;
+    --text-colour : white;
+
+  }
+
+
+
 *{
     padding: 0;
     margin: 0;
+
+}
+
+h1{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--background-colour);
+    color: var(--text-colour);
 }
 
 .interraction-wrapper form{
@@ -17,7 +42,7 @@
     margin-bottom: 5px;
     margin-right: 10px;
     border-radius: 5px;
-    background-color: #c6b2f700;
+    background-color: var(--background-colour);
     border: 1px solid white;
     cursor:pointer;
 
