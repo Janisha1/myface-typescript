@@ -9,14 +9,14 @@
         <p class="user-user-name"><%= username %></p>
         <p class="user-user-email"><%= email %></p>
     </div>
-    <div class="user-post_list">
-        <h1 class="post-title"><%= name %>'s Posts</h1>
+     <h1 class="post-title"><%= name %>'s Posts</h1>
+    <div class="user-post_list">       
         <% posts.forEach(post => {%>
             <div class="user-post">
-                <div class="user-post_image"></div>
+                <img class="user-post_image" src="<%= post.imageUrl %>" alt="User Image not loading" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png'">
                 <p><%= username %></p>
-                <p><%= format(post.createdAt, "dd/MM/yyyy") %></p>
-
+                <p><%= post.createdAt %> </p>
+                <p><%= post.message %> </p>
             </div>
         <% }); %>
         

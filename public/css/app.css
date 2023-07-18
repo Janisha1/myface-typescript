@@ -72,6 +72,23 @@ body {
     flex-direction: column;
     gap: 10px;
 }
+.user-post_list{
+    display: flex;
+    overflow: auto;
+}
+
+.user-post{
+    display: flex;
+    flex-direction: column;
+    max-width: 90vw; 
+    height: 300px;
+}
+
+ .user-post_image{
+    width: 300px;
+    height: 150px;
+    object-fit: cover;
+} 
 
 @media only screen and (min-width: 850px) {
     .post-list, .user-list{
