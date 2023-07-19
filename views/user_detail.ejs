@@ -4,40 +4,40 @@
         <main>
             <div class="user-header">
                 <div>
-                    <img class="user-cover_image" src="<%= coverImageUrl %>" alt="<%= name %> Cover Image">
+                    <img class="user-cover_image" src="<%= user.coverImageUrl %>" alt="<%= user.name %> Cover Image">
                 </div>
                 <div class="user-details">
-                    <img class="user-profile_image" src=<%=profileImageUrl %>"" alt="" class="<%= name %> Profile
+                    <img class="user-profile_image" src=<%=user.profileImageUrl %>"" alt="" class="<%= user.name %> Profile
                         Image">
                         <div class="user-details_texts">
                             <h1 class="user-name">
-                                <%= name %>
+                                <%= user.name %>
                             </h1>
                             <p class="user-user-name">
-                                <%= username %>
+                                <%= user.username %>
                             </p>
                             <p class="user-user-email">
-                                <%= email %>
+                                <%= user.email %>
                             </p>
                         </div>
                 </div>
             </div>
             <section>
                 <h1 class="post-title">
-                    <%= name %>'s Posts
+                    <%= user.name %>'s Posts
                 </h1>
                 <div class="user-post_list">
-                    <% posts.forEach(post=> {%>
+                    <% user.posts.forEach(post=> {%>
                         <div class="user-post">
                             <img class="user-post_image" src="<%= post.imageUrl %>" alt="User Image not loading"
                                 onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png'">
                             <div class="user-post_details">
                                 <div class="user-post_details-info">
                                     <p>
-                                        <%= username %>
+                                        <%= user.username %>
                                     </p>
                                     <p class="user-date">
-                                        <%= post.createdAt %>
+                                        <%= format(post.createdAt, "dd/MM/yyyy" ) %>
                                     </p>
                                 </div>
                                 <p class="user-post_details-message">
