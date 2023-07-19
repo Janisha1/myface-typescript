@@ -35,17 +35,12 @@
 
 }
 
-h1{
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 400;
-}
-
 body {
     font-family: "Segoe UI", Arial, sans-serif;
     background-color: var(--background-colour);
     color: var(--text-colour);
 }
+
 /* 
 .interraction-wrapper form{
     display: inline;
@@ -92,7 +87,9 @@ body {
     gap: 10px;
 } */
 
-
+section{
+    margin: var(--mobile-section-spacing) 0; 
+}
 
 
 /* Starts Here User Detail Header */
@@ -105,8 +102,9 @@ body {
 
 .user-cover_image{
     height:13.75em;
-    width: 100%;
+    width: 100vw;
     object-fit: cover;
+    object-position: center;
 }
 
 .user-details{
@@ -118,8 +116,8 @@ body {
     flex-direction: row;
     background-color: #15182054;
     width: 100%;
-    border-top-left-radius: 45%;
-    border-bottom-left-radius: 45%;
+    border-top-left-radius: 10em;
+    border-bottom-left-radius: 10em;
 }
 
 .user-profile_image{
@@ -153,14 +151,21 @@ body {
     font-weight: 300;
 }
 
+/* Title */
+.post-title{
+    font-size: var(--mobile-font-size-subtitle);
+    font-weight: 400;
+    margin: var(--mobile-gutter);
+
+}
+
 /* Starts Here User Detail Main */
 
 .user-post_list{
     display: flex;
     overflow: auto;
     gap: var(--mobile-gutter);
-    padding: 0 0 0 20px; 
-    
+    padding: 0 0 0 var(--mobile-gutter); 
 }
 
 .user-post{

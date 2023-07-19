@@ -22,31 +22,33 @@
                         </div>
                 </div>
             </div>
-            <h1 class="post-title">
-                <%= name %>'s Posts
-            </h1>
-            <div class="user-post_list">
-                <% posts.forEach(post=> {%>
-                    <div class="user-post">
-                        <img class="user-post_image" src="<%= post.imageUrl %>" alt="User Image not loading"
-                            onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png'">
-                        <div class="user-post_details">
-                            <div class="user-post_details-info">
-                                <p>
-                                    <%= username %>
-                                </p>
-                                <p class="user-date">
-                                    <%= post.createdAt %>
+            <section>
+                <h1 class="post-title">
+                    <%= name %>'s Posts
+                </h1>
+                <div class="user-post_list">
+                    <% posts.forEach(post=> {%>
+                        <div class="user-post">
+                            <img class="user-post_image" src="<%= post.imageUrl %>" alt="User Image not loading"
+                                onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png'">
+                            <div class="user-post_details">
+                                <div class="user-post_details-info">
+                                    <p>
+                                        <%= username %>
+                                    </p>
+                                    <p class="user-date">
+                                        <%= post.createdAt %>
+                                    </p>
+                                </div>
+                                <p class="user-post_details-message">
+                                    <%= post.message %>
                                 </p>
                             </div>
-                            <p class="user-post_details-message">
-                                <%= post.message %>
-                            </p>
                         </div>
-                    </div>
-                    <% }); %>
-
-            </div>
+                        <% }); %>
+    
+                </div>
+            </section>
         </main>
         <%- include('_footer') -%>
 
