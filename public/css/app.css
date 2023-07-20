@@ -211,15 +211,8 @@ section{
     font-size: var(--mobile-font-size-body);
 
 }
-.menu-wrapper{
-    display: none;
-}
 
-.nav-header {
-    display: flex;
-    flex-direction: column;
-    justify-content:space-between;
-    align-items: center;
+#nav-header {
     position: fixed;
     height: 100vh;
     width: 75vw;
@@ -227,6 +220,14 @@ section{
     right: 0;
     top: 0;
     z-index: 1;
+}
+#menu-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 75vw;
 }
 
 .menu-title{
@@ -245,6 +246,11 @@ section{
 
 #navbar-menu a{
     color: var(--foreground-colour);
+    text-decoration: none;
+}
+
+#navbar-menu a:hover {
+    color: var(--primary-colour);
     text-decoration: none;
 }
 

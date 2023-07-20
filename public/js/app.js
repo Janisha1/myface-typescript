@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function navMenu_Click(){
-  const navBarMenu = document.getElementById("menu-wrapper");
+  const navBarMenu = document.getElementById("nav-header");
   const main = document.getElementById("mainScreenBlur");
   if (navBarMenu.style.display === 'flex'){
     navBarMenu.style.display = 'none';
