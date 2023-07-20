@@ -16,7 +16,6 @@
     --mobile-font-size-body: 0.875em;
     --mobile-font-size-secondary: 0.635em;
 
-
     --tablet-gutter: 2em;
     --tablet-section-spacing: 3em;
     --tablet-card-padding: 1em;
@@ -24,6 +23,13 @@
     --desktop-gutter: 3em;
     --desktop-section-spacing: 5em;
     --desktop-card-padding: 1.5em;
+
+    --desktop-font-size-title: 2em;
+    --desktop-font-size-subtitle: 1.5em;
+    --desktop-font-size-button: 1.5em;
+    --desktop-font-size-body: 1em;
+    --desktop-font-size-secondary: 0.75em;
+
 
   }
 
@@ -100,12 +106,13 @@ section{
 
 .user-header{
     height: 18.875em;
+    max-width: 900px;
     position: relative;
-
+    overflow: hidden;
 }
 
 .user-cover_image{
-    height:13.75em;
+    height: 13.75em;
     width: 100vw;
     object-fit: cover;
     object-position: center;
@@ -272,4 +279,70 @@ section{
         max-width: 425px;
         flex-grow: 1;
     }
-} 
+}
+
+@media only screen and (min-width: 900px) {
+    body {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    #nav-header{
+        display: flex;  
+        align-items: center;
+        justify-content: space-between;   
+        margin: auto auto;
+        height: 5em;
+        background-color: var(--darker-background-colour);
+        z-index: 1;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+    }
+
+    #menu-wrapper{
+        max-width: 900px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 900px;
+        height: auto;
+        margin: 0 auto;
+    }
+    
+    .menu-title{
+        margin-top: 0;
+        align-self: flex-start;
+        font-size: var(--desktop-font-size-title);
+    }
+    
+    #navbar-menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 15px; 
+        font-size: var( --desktop-font-size-subtitle);
+    }
+
+    .nav-menu{
+        display: none;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .menu-anchor{
+        color: var(--foreground-colour);
+        text-decoration: none;
+    }
+
+    .menu-anchor:hover{
+        color: var(--primary-colour);
+        text-decoration: none;
+    }
+}
+
