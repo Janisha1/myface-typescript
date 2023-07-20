@@ -106,7 +106,7 @@ section{
 
 .user-header{
     height: 18.875em;
-    max-width: 900px;
+    max-width: 1008px;
     position: relative;
     overflow: hidden;
 }
@@ -188,7 +188,7 @@ section{
 }
 
 .user-post_image{
-    width: 275px;
+    width: 304px;
     height: 200px;
     object-fit: cover;
 } 
@@ -281,7 +281,7 @@ section{
     color: var(--primary-colour);
     text-decoration: none;
 }
-
+/* 
 @media only screen and (min-width: 850px) {
     .post-list, .user-list{
         flex-direction: row;
@@ -292,11 +292,11 @@ section{
         max-width: 425px;
         flex-grow: 1;
     }
-}
+} */
 
-@media only screen and (min-width: 900px) {
-    body {
-        max-width: 900px;
+@media only screen and (min-width: 1008px) {
+    main {
+        max-width: 1008px;
         margin: 0 auto;
     }
 
@@ -315,12 +315,12 @@ section{
     }
 
     #menu-wrapper{
-        max-width: 900px;
+        max-width: 1000px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        width: 900px;
+        width: 1000px;
         height: auto;
         margin: 0 auto;
     }
@@ -361,10 +361,32 @@ section{
         display: flex;
         flex-wrap: wrap;
         overflow: none;
-        gap: var(--mobile-gutter);
+        gap: var(--desktop-gutter);
         padding: 0 0 0 0; 
     }
 
+    .post-title{
+        font-size: var(--desktop-font-size-subtitle);
+        font-weight: 400;
+        margin: var(--mobile-gutter) 0;
+    
+    }
+
+    footer{
+        border-top: 2px solid var(--foreground-colour);
+
+
+    }
+
+    .footer-wrapper{
+        max-width: 1008px;
+        margin: 2em auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
 
 }
 
